@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS link -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <style>
+    
+
+    
+
+html, body {
+
+  /* Set the background image and position */
+  background-image: url('assets/six.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* Set a more transparent background color */
+  background-color: rgba(9, 9, 71, 0.5); /* Adjust the alpha value (0.0 to 1.0) */
+
+  color: white;
+  height: 100vh;
+  margin: 0;
+  padding: 30px;
+}
+
+
+  </style>
+      
+  <title>Customer Details</title>
+
+</head>
+
+<body>
+  <div class="wrapper">
+     
+    <ul class="nav-area">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#" routerLink="/login">Login</a></li>
+    <li><a href="#">Contact</a></li>
+    </ul>
+    </div>
+    
+
+  <br>
+  <br>
+
+    <h1 class="text-white">Customer Details:</h1>
+
+  <div class="container d-flex justify-content-center align-items-center" style="height: 130vh;">
+
+    <table class="table table-striped">
+
+        <thead>
+
+          <tr >
+
+            <th scope="col">Customer Id</th>
+
+            <th scope="col">Customer Name</th>
+
+            <th scope="col">Location</th>
+
+            <th scope="col">Data Plan</th>
+
+            <th scope="col">Bill</th>
+            <th scope="col">Date of Issue</th>
+            <th scope="col">Status</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let customer of customers">
+            <th scope="row">{{ customer.customerId }}</th>
+            <td>{{ customer.customerName }}</td>
+            <td>{{ customer.location }}</td>
+            <td>{{ customer.plan }}</td>
+            <td>{{customer.bill}}</td>
+            <td>{{ customer.dateOfIssue }}</td>
+            <td>{{customer.status}}</td>
+          </tr>
+        </tbody>
+
+      </table>
+
+  </div>
+
+ 
+
+  <!-- Bootstrap JS and jQuery -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+ 

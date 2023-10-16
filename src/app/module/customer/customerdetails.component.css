@@ -1,0 +1,38 @@
+.profile-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('src/assets/one.jpg'); /* Update with the correct path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #050028; /* Adjust text color for visibility based on your image */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 0; /* Remove the previous margin */
+    height: 100vh; /* Set height to cover the entire viewport */
+  }
+  .wrapper {
+    width: 1170px;
+    margin: auto;
+  }
+  
+  .nav-area {
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+  }
+  .nav-area li {
+    display: inline-block;
+  }
+  .nav-area li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: poppins;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .nav-area li a:hover {
+    background: #fff;
+    color: #333;
+  }
+  
