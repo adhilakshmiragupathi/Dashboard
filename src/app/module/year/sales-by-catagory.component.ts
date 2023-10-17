@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-sales-by-catagory',
   templateUrl: './sales-by-catagory.component.html',
-  styleUrls: ['./sales-by-catagory.component.css']
+  styleUrls: ['./sales-by-catagory.component.scss']
 })
 export class SalesByCatagoryComponent implements OnInit {
-  chartOptions: any; // Define chartOptions as any for now
+  chartOptions: any;
 
   constructor(private http: HttpClient) {}
 
@@ -18,21 +18,27 @@ export class SalesByCatagoryComponent implements OnInit {
   fetchChartData() {
     this.http.get<any>('http://localhost:9999/analytics').subscribe(
       data => {
-        console.log('Response from API:', data);
-
-        // Transform the response into the expected format
         const transformedData = Object.keys(data).map(year => ({ x: new Date(+year, 0), y: data[year] }));
 
         this.chartOptions = {
-          animationEnabled: true,
           backgroundColor: 'rgba(42, 42, 82, 0.2)',
           title: {
-            text: 'Year Based Customers'
+            text: 'Total Impressions by Platforms',
+            fontColor: '#545353',
+            fontSize: 11,
+            fontStyle: 'Arial'
           },
           axisY: {
-            title: 'Units Sold',
-            // valueFormatString: '0,,.',
-            suffix: ''
+            title: 'Occurrence',
+            fontColor: '#545353',
+            labelFontColor: '#545353',
+            color: 'black' // Change y-axis line color to black
+          },
+          axisX: {
+            title: 'Payment Method',
+            fontColor: '#545353',
+            labelFontColor: '#545353',
+            color: 'black' // Change x-axis line color to black
           },
           data: [
             {

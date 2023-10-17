@@ -19,6 +19,7 @@ import { ModuleComponent } from './module/module.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerdetailsComponent } from './module/customer/customerdetails.component';
 import { ProfileComponent } from './module/profile/profile.component';
+import { PaymentComponent } from './module/payment/payment.component';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { ProfileComponent } from './module/profile/profile.component';
     HomecomponentComponent,
     ModuleComponent,
     CustomerdetailsComponent,
-    ProfileComponent
+    ProfileComponent,PaymentComponent  
   ],
   imports: [
     BrowserModule,

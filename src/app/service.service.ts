@@ -64,6 +64,9 @@ export class MyHttpService {
   getCustomerCountByYear(): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/analytics`);
   }
+  getPlantData(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/plans`);
+  }
 }
 
 

@@ -116,6 +116,38 @@
       }
     }
   }
+  .bottom-section1 {
+    display: flex;
+    justify-content: space-between;
+    .widget {
+      height: 350px;
+      background-color:rgb(9, 9, 71);
+      border-radius: 5px;
+      margin: 10px;
+      box-shadow: 5px 5px 5px #1c2c67;
+      &.left {
+        width: 650px;
+        @media only screen and (max-width: 1200px) {
+          width: 570px;
+        }
+      }
+      &.right {
+        width: 1000px;
+        @media only screen and (max-width: 1600px) {
+          width: 770px;
+        }
+        @media only screen and (max-width: 1500px) {
+          width: 470px;
+        }
+        @media only screen and (max-width: 1400px) {
+          width: 370px;
+        }
+        @media only screen and (max-width: 1200px) {
+          width: 370px;
+        }
+      }
+    }
+  }
   body{
     overflow-x: hidden; 
     }
