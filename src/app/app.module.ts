@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomerdetailsComponent } from './module/customer/customerdetails.component';
 import { ProfileComponent } from './module/profile/profile.component';
 import { PaymentComponent } from './module/payment/payment.component';
+import { TimingComponent } from './module/timing/timing.component';
+
 
 
 @NgModule({
@@ -27,21 +29,20 @@ import { PaymentComponent } from './module/payment/payment.component';
     AppComponent,
     HeaderComponent,
     SideNavComponent,
-    MainComponent,
-    TopWidgetsComponent,
+    MainComponent,TopWidgetsComponent,LastFewTransactionsComponent,TopThreeProductsComponent,ProfileComponent,PaymentComponent,
+   
   SalesByCatagoryComponent,
-    LastFewTransactionsComponent,
-    TopThreeProductsComponent,
+  
     SalesByMonthComponent,
     HomecomponentComponent,
     ModuleComponent,
     CustomerdetailsComponent,
-    ProfileComponent,PaymentComponent  
+  TimingComponent  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-   FontAwesomeModule,FormsModule,NgxChartsModule,CanvasJSAngularChartsModule,HttpClientModule
+   FontAwesomeModule,FormsModule,NgxChartsModule,CanvasJSAngularChartsModule,HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

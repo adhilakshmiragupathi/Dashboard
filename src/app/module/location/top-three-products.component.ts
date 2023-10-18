@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Chart } from 'chart.js';
-import { MyHttpService } from 'src/app/service.service';
+import { myHttpService } from 'src/app/service.service';
 
 @Component({
   selector: 'app-top-three-products',
@@ -12,7 +12,7 @@ export class TopThreeProductsComponent implements OnInit, AfterViewInit {
   private labels: string[] = [];
   private counts: number[] = [];
 
-  constructor(private yourService: MyHttpService) {}
+  constructor(private yourService: myHttpService) {}
 
   ngOnInit(): void {
     // Fetch chart data on component initialization
@@ -43,6 +43,27 @@ export class TopThreeProductsComponent implements OnInit, AfterViewInit {
     if (canvas) {
       const ctx = canvas.getContext('2d');
       if (ctx) {
+        // Adjust the background colors to add a little darkness
+        const backgroundColors = [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+        ]
+        const borderColor=[
+            
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ]
+              
+        
+
         this.chart = new Chart(ctx, {
           type: 'doughnut',
           data: {
@@ -50,14 +71,9 @@ export class TopThreeProductsComponent implements OnInit, AfterViewInit {
             datasets: [{
               label: 'Location Based Plan',
               data: this.counts,
-              backgroundColor: [
-                'rgba(255, 0, 0, 0.2)',
-                'yellow',
-                'green',
-                'brown',
-                'orange',
-                'blue'
-              ],
+              backgroundColor: backgroundColors,
+              borderColor:borderColor,
+              borderWidth:1
             }]
           },
           options: {

@@ -15,7 +15,7 @@
   <style>
     
 
-    
+    welocme 
 
 html, body {
 
@@ -59,7 +59,7 @@ html, body {
 
     <h1 class="text-white">Customer Details:</h1>
 
-  <div class="container d-flex justify-content-center align-items-center" style="height: 130vh;">
+  <div class="container d-flex justify-content-center align-items-center" style="height: 210vh;">
 
     <table class="table table-striped">
 
@@ -67,17 +67,21 @@ html, body {
 
           <tr >
 
-            <th scope="col">Customer Id</th>
+            <th scope="col">Customer_Id</th>
 
-            <th scope="col">Customer Name</th>
+            <th scope="col">Customer_Name</th>
+            <th scope="col">Customer_Bill</th>
 
             <th scope="col">Location</th>
 
-            <th scope="col">Data Plan</th>
+            <th scope="col">DataPlan</th>
 
-            <th scope="col">Bill</th>
+          
             <th scope="col">Date of Issue</th>
             <th scope="col">Status</th>
+            <th scope="col">Bill_Tax</th>
+            <th scope="col">Mode of Plan</th>
+            <th scope="col">Status of Payment</th>
 
           </tr>
 
@@ -87,11 +91,15 @@ html, body {
           <tr *ngFor="let customer of customers">
             <th scope="row">{{ customer.customerId }}</th>
             <td>{{ customer.customerName }}</td>
+            
+            <td>{{customer.bill}}</td>
             <td>{{ customer.location }}</td>
             <td>{{ customer.plan }}</td>
-            <td>{{customer.bill}}</td>
             <td>{{ customer.dateOfIssue }}</td>
             <td>{{customer.status}}</td>
+            <td>{{customer.bill_with_tax}}</td>
+            <td>{{customer.mode_of_plan}}</td>
+            <td>{{customer.status_of_payment}}</td>
           </tr>
         </tbody>
 

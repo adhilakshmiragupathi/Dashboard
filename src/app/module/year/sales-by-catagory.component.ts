@@ -23,19 +23,19 @@ export class SalesByCatagoryComponent implements OnInit {
         this.chartOptions = {
           backgroundColor: 'rgba(42, 42, 82, 0.2)',
           title: {
-            text: 'Total Impressions by Platforms',
+            text: 'Year Based Customers',
             fontColor: '#545353',
             fontSize: 11,
             fontStyle: 'Arial'
           },
           axisY: {
-            title: 'Occurrence',
+             title: 'Customers',
             fontColor: '#545353',
             labelFontColor: '#545353',
             color: 'black' // Change y-axis line color to black
           },
           axisX: {
-            title: 'Payment Method',
+            title: 'Year',
             fontColor: '#545353',
             labelFontColor: '#545353',
             color: 'black' // Change x-axis line color to black

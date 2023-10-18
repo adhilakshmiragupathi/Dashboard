@@ -1,13 +1,14 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Chart, ChartData } from 'chart.js';
-import { MyHttpService } from 'src/app/service.service'; // Update the path
+import { myHttpService } from 'src/app/service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.scss']
 })
-export class PaymentComponent implements AfterViewInit {
+export class PaymentComponent implements OnDestroy {
   chart!: Chart;
   chartData: ChartData = {
     labels: [],
@@ -20,16 +21,14 @@ export class PaymentComponent implements AfterViewInit {
     }]
   };
 
-  constructor(private myHttpService: MyHttpService) { }
+  private subscription!: Subscription;
 
-  ngAfterViewInit() {
-    this.myHttpService.getPlantData().subscribe((data: any[]) => {
-      // Extracting data for labels and y-values
-      this.chartData.labels = data.map(item => item[0]);  // Plan type
-      this.chartData.datasets[0].data = data.map(item => ({ x: item[0], y: item[1] }));  // Plan type and occurrence count
+  constructor(private myHttpService: myHttpService) { }
 
-      this.createChart();
-    });
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   createChart() {
@@ -49,7 +48,7 @@ export class PaymentComponent implements AfterViewInit {
         plugins: {
           title: {
             display: true,
-            text: 'Total Impressions by Platforms',
+            text: 'Mode of Payment',
           }
         },
         scales: {
@@ -69,6 +68,20 @@ export class PaymentComponent implements AfterViewInit {
           }
         }
       }
+    });
+  }
+
+  ngAfterViewInit() {
+    this.subscription = this.myHttpService.getPlantData().subscribe((data: any[]) => {
+      this.chartData.labels = data.map(item => item[0]);  // Plan type
+      this.chartData.datasets[0].data = data.map(item => item[1]);  // Occurrence count
+
+      // Update the chart
+      if (this.chart) {
+        this.chart.destroy();  // Destroy the previous chart before creating a new one
+      }
+
+      this.createChart();
     });
   }
 }

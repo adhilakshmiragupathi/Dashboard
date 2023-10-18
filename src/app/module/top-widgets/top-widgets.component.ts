@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Chart } from 'chart.js/auto';
-import { MyHttpService } from 'src/app/service.service';
+import Chart  from 'chart.js/auto';
+import { myHttpService } from 'src/app/service.service';
 
 @Component({
   selector: 'app-top-widgets',
@@ -15,7 +15,7 @@ export class TopWidgetsComponent implements OnInit, AfterViewInit {
   activeCount!: number;
   inactiveCount: any;
 
-  constructor(private subscriberService: MyHttpService) { }
+  constructor(private subscriberService: myHttpService) { }
 
   ngOnInit(): void {
     this.subscriberService.getCustomerCountsByMonth().subscribe(

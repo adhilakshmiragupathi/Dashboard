@@ -16,10 +16,10 @@
       flex-wrap: wrap; /* Allow items to wrap to the next row */
     }
     .chart {
-        width: 1000px; /* Set a fixed width for the chart */
-        height: 900px;
-        margin-left: 900px; /* Move chart to the right corner */
-        margin-top: 3000px; /* Add top margin to create space between boxes and chart */
+        width: 900px; /* Set a fixed width for the chart */
+        height: 200px;
+        margin-left: 500px; /* Move chart to the right corner */
+        margin-top: 1000px; /* Add top margin to create space between boxes and chart */
         margin-right: auto; /* Add right margin to create space between boxes and chart */
         /* Add any other styles you need for the chart container */
       }
@@ -28,7 +28,7 @@
         align-items: center;
         justify-self:flex-start;
         height: 400px;
-        width: 600px;
+        width: 400px;
         margin-left: 850px; /* Move chart to the right corner */
         margin-top: -400px; /* Add top margin to create space between boxes and chart */
         margin-right: 300;

@@ -22,3 +22,23 @@ export class CustomerdetailsComponent implements OnInit {
     );
   }
 }
+  // customers: any[] = [];
+
+  // constructor(private http: HttpClient) { }
+
+  // ngOnInit(): void {
+  //   const socket = new WebSocket('ws://localhost:9999/ws');
+
+
+  //   socket.onmessage = (event) => {
+  //     this.customers = JSON.parse(event.data);
+      
+  //   };
+
+  //   socket.onclose = (event) => {
+  //     console.log('WebSocket closed: ', event);
+  //   };
+ 
+  // }
+  
+

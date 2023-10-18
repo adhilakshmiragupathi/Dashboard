@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit, AfterViewInit } from '@angular/core';
 import { Chart } from 'chart.js';
-import { MyHttpService } from 'src/app/service.service';
+import { myHttpService } from 'src/app/service.service';
 @Component({
   selector: 'app-last-few-transactions',
   templateUrl: './last-few-transactions.component.html',
@@ -12,8 +12,8 @@ export class LastFewTransactionsComponent implements OnInit, AfterViewInit {
   lineChartData: number[] = [];
   data:any;
 
-  constructor(private service: MyHttpService) {
-    this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  constructor(private service: myHttpService) {
+    this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June'];
     // Fetch the data from your service
     this.service.getData().subscribe((data: number[]) => {
       // Update lineChartData with the data from the service
@@ -42,7 +42,7 @@ export class LastFewTransactionsComponent implements OnInit, AfterViewInit {
             borderColor: 'rgba(75, 192, 192, 1)',
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderWidth: 1,
-            tension: 0.3,
+            tension: 0.6,
           },
         ],
       },
@@ -52,7 +52,7 @@ export class LastFewTransactionsComponent implements OnInit, AfterViewInit {
         plugins: {
           title: {
             display: true,
-            text: 'Monthly Based Revenue',
+            text: 'Monthly Based Customers',
           },
         },
       },

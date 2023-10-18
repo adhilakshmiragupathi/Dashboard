@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MyHttpService } from 'src/app/service.service';
+import { myHttpService } from 'src/app/service.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +13,7 @@ export class ProfileComponent {
   passwordEmptyError: boolean = false; // Flag to indicate if password is empty
   isInputDisabled: boolean = false; // Flag to indicate if the input should be disabled
 
-  constructor(private myHttpService: MyHttpService) { }
+  constructor(private myHttpService: myHttpService) { }
   passwordTouched: boolean = false;
 
   onPasswordInputBlur() {

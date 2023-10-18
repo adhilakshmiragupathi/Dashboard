@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class MyHttpService {
+export class myHttpService {
+  
   //   return this.http.get<number>(`${this.baseUrl}/getDeletedColumnsCount`);
   // }
   getNew() {
@@ -64,12 +65,7 @@ export class MyHttpService {
   getCustomerCountByYear(): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/analytics`);
   }
-  getPlantData(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/plans`);
-  }
+  getPlantData(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/plans`);
 }
-
-
-
-  // You can add more methods for other HTTP requests here
-
+}
